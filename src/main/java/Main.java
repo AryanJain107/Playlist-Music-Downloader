@@ -47,8 +47,8 @@ public class Main {
 //        System.out.println(Arrays.toString(urlList1));
 //        System.out.println(Arrays.toString(urlList2));
         //p = Runtime.getRuntime().exec("cmd.exe /c start mkdir " + playlistName, null, new File("C:/VideoDownloadTest"));
-        p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList1, null, new File("C:/VideoDownloadTest"));
-        p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList2, null, new File("C:/VideoDownloadTest"));
+        p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList1, null, new File("C:/projects/Playlist-Music-Downloader/Playlist-Music-Downloader"));
+        p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList2, null, new File("C:/projects/Playlist-Music-Downloader/Playlist-Music-Downloader"));
 
         //p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 youtube.com/watch?v=UTHLKHL_whs https://www.youtube.com/watch?v=qdpXxGPqW-Y", null, new File("C:/VideoDownloadTest"));
     }
