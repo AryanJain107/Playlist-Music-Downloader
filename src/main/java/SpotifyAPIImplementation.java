@@ -11,6 +11,14 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * This class implements the Spotify API Implementation to allow a user to see all
+ * of their playlists and choose a playlist that they would like to have downloaded.
+ *
+ * @author Aryan Jain
+ * @version 1.0.0
+ */
+
 public class SpotifyAPIImplementation {
     private static SpotifyApi spotifyApi;
     private static GetListOfUsersPlaylistsRequest getListOfUsersPlaylistsRequest;
@@ -72,7 +80,6 @@ public class SpotifyAPIImplementation {
                 for (int i = 0; i < playlistTrackPaging.getItems().length; i++) {
                     songNames[i] = playlistTrackPaging.getItems()[i].getTrack().getName();
                 }
-                //System.out.println(Arrays.toString(songNames));
 
             } catch (IOException | SpotifyWebApiException | ParseException e) {
                 System.out.println("Error: " + e.getMessage());
@@ -82,17 +89,4 @@ public class SpotifyAPIImplementation {
         }
         return songNames;
     }
-
-
-
-
-//    public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Access Token?");
-//        String accessToken = scanner.nextLine();
-//        System.out.println("User ID?");
-//        String userID = scanner.nextLine();
-//        new ProjectPart1(accessToken, userID);
-//        System.out.println(Arrays.toString(getListOfUsersPlaylists()));
-//    }
 }

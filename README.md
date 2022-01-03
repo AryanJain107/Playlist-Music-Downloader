@@ -15,13 +15,13 @@ In order to get the Spotify user ID, login to the Spotify account and go to the 
 After that, follow the instructions in the application to achieve the desired the results. 
 
 ## Quota Exceeded Error
-After running the program, if the "quota exceeded" error is occurring. It is most likely because the program has already reached its limit for the number of times it can request resources from the Youtube API. There are 2 solutions for this error. 
+After running the program, if the "quota exceeded" error is occurring. It is most likely because the program has already reached its limit for the number of times it can request resources from the YouTube API. There are 2 solutions for this error. 
 1. The requests are refreshed every 24 hours. So, just waiting until the requests are reset will get rid of this error.
 2. A new ApiKey can be generated and updated in the YoutubeAPIImplementation class to resolve this issue. Below are the steps to do so.
    1. Go to https://console.developers.google.com/apis/api/youtube/overview and sign in.
    2. Create a project. 
    3. Locate the API Widget on the project home menu and after clicking on it, click on the "Enable APIs and Services" option right under the search bar. 
-   4. On the search bar, search for "Youtube Data API v3" and click on it. 
+   4. On the search bar, search for "YouTube Data API v3" and click on it. 
    5. Click on the "Enable" button. Soon after doing that, the page will be reloaded and "Create Credentials" button will appear.
    6. Click this option and in the dropdown option for selecting the API, select the one that was enabled earlier. Select on the Public Data option and click "next."
    7. An API Key will be generated. Copy this key, click the "done" button, and update the apiKey field in the YoutubeAPIImplementation class.
@@ -35,12 +35,12 @@ This class, which has the `main` method, calls the two API implementation files 
 _Note: Two Command Prompts are opened because the program splits the array of song url links in half to improve download efficiency._
 
 ## SpotifyAPIImplementation
-This class implements the Spotify API in order to get information about the user's Spotify playlist that the user wants to download. In the `playlistInformation()` method, a list of all of the user's playlists is created from which the user can select any of the playlists. Upon doing so, the user can view the songs that are in the selected playlist. This method returns an array of all the songs of the playlist.
+This class implements the Spotify API in order to get information about the user's Spotify playlists that the user wants to download. In the `playlistInformation()` method, a list of all the user's playlists is created from which the user can select any of the playlists. Upon doing so, the user can view the songs that are in the selected playlist. This method returns an array of all the songs of the playlist.
 
 ## YoutubeAPIImplementation
-This class implements the YoutubeAPI Implementation in order to get data about the songs in the user's selected Spotify playlist. This class contains the `youtubeSongLink()` method that returns a string array of the Youtube url links of all the songs in the selected Spotify playlist. Each song is searched as a keyword and the resulting information from the searches is requested from the Youtube API. 
+This class implements the YoutubeAPI Implementation in order to get data about the songs in the user's selected Spotify playlist. This class contains the `youtubeSongLink()` method that returns a string array of the YouTube url links of all the songs in the selected Spotify playlist. Each song is searched as a keyword and the resulting information from the searches is requested from the YouTube API. 
 # APIs
-The APIs used implemented in this project are the Spotify API and the Youtube Data API. 
+The APIs used implemented in this project are the Spotify API and the YouTube Data API. 
 
 ## Spotify-Web-API-Java
 https://github.com/spotify-web-api-java/spotify-web-api-java
@@ -49,7 +49,7 @@ https://github.com/spotify-web-api-java/spotify-web-api-java
 https://github.com/googleapis/google-api-java-client-services/tree/main/clients/google-api-services-youtube/v3
 
 # Youtube-dl
-This application enables the ability to download a youtube video using Command Prompt. In order to successfully run this program, this application needs to be installed and placed in the same folder as this project. To download this application, go to https://ytdl-org.github.io/youtube-dl/download.html and follow the provided instructions.
+This application enables the ability to download a YouTube video using Command Prompt. In order to successfully run this program, this application needs to be installed and placed in the same folder as this project. To download this application, go to https://ytdl-org.github.io/youtube-dl/download.html and follow the provided instructions.
 
-# FFMEG
+# FFMPEG
 This is an open-sourced project that helps convert audio files into different formats. Download this and place it in the same folder as this project on your local machine. Go to this link for the installation process: https://ffmpeg.org/.
