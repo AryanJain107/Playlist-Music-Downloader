@@ -12,15 +12,10 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class SpotifyAPIImplementation {
-    private static String accessToken;
-    private static String userId;
-
     private static SpotifyApi spotifyApi;
     private static GetListOfUsersPlaylistsRequest getListOfUsersPlaylistsRequest;
 
     public SpotifyAPIImplementation(String accessToken, String userId) {
-        SpotifyAPIImplementation.accessToken = accessToken;
-        SpotifyAPIImplementation.userId = userId;
 
         SpotifyAPIImplementation.spotifyApi = new SpotifyApi.Builder()
                 .setAccessToken(accessToken)
@@ -32,7 +27,7 @@ public class SpotifyAPIImplementation {
                 .build();
     }
 
-    public static String[] getListOfUsersPlaylists() {
+    public static String[] PlaylistInformation() {
         String[] songNames = null;
         try {
             assert false;

@@ -30,11 +30,15 @@ After running the program, if the "quota exceeded" error is occurring. It is mos
 # Classes Summary
 
 ## Main
+This class, which has the `main` method, calls the two API implementation files and enables users to download songs from a playlist through a terminal-based interface. Once the user selects and confirms the playlist that they would like to download, the `main` method opens two Command Prompts where the Youtube-dl application is called to download the videos and so that the users have a live report of the program, regarding the download process and the mp3 conversion. 
+
+_Note: Two Command Prompts are opened because the program splits the array of song url links in half to improve download efficiency._
 
 ## SpotifyAPIImplementation
+This class implements the Spotify API in order to get information about the user's Spotify playlist that the user wants to download. In the `playlistInformation()` method, a list of all of the user's playlists is created from which the user can select any of the playlists. Upon doing so, the user can view the songs that are in the selected playlist. This method returns an array of all the songs of the playlist.
 
 ## YoutubeAPIImplementation
-
+This class implements the YoutubeAPI Implementation in order to get data about the songs in the user's selected Spotify playlist. This class contains the `youtubeSongLink()` method that returns a string array of the Youtube url links of all the songs in the selected Spotify playlist. Each song is searched as a keyword and the resulting information from the searches is requested from the Youtube API. 
 # APIs
 The APIs used implemented in this project are the Spotify API and the Youtube Data API. 
 

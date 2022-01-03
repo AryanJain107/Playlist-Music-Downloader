@@ -12,7 +12,7 @@ public class Main {
         System.out.println("User ID?");
         String userID = scanner.nextLine();
         new SpotifyAPIImplementation(accessToken, userID);
-        String[] songNames = SpotifyAPIImplementation.getListOfUsersPlaylists();
+        String[] songNames = SpotifyAPIImplementation.PlaylistInformation();
         System.out.println(Arrays.toString(songNames));
         if (songNames.length == 0) {
             System.out.println("This playlist has no songs! Choose a playlist with songs in order to proceed");
