@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class YoutubeAPIImplementation {
+    private static final String apiKey = "AIzaSyAvh-bgHCxSOqFmzcx2SMh7wIFSWWpDJzE";
     public String[] youtubeSongLink(String[] songName) throws IOException, GeneralSecurityException {
         YouTube youtube;
         youtube = new YouTube.Builder(GoogleNetHttpTransport.newTrustedTransport(), new JacksonFactory(), new HttpRequestInitializer() {
@@ -26,7 +27,7 @@ public class YoutubeAPIImplementation {
 
 
 // api key
-        String apiKey = "AIzaSyBK2FwblFcqo3qMhW1v6wWuvCCGp_UMnhg";
+        // apiKey = "AIzaSyBK2FwblFcqo3qMhW1v6wWuvCCGp_UMnhg";
 
 // Define the API request for retrieving search results.
         YouTube.Search.List search = youtube.search().list("id,snippet");
