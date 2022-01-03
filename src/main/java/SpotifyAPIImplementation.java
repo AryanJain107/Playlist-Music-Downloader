@@ -23,6 +23,13 @@ public class SpotifyAPIImplementation {
     private static SpotifyApi spotifyApi;
     private static GetListOfUsersPlaylistsRequest getListOfUsersPlaylistsRequest;
 
+    /**
+     * Takes in the Access Token and User ID as parameters in order
+     * to access a user's Spotify Data from the Spotify API.
+     *
+     * @param accessToken : Check the README.md file for instructions to generate an accessToken
+     * @param userId : Check the README.md file for instructions to locate the userID of the Spotify Account
+     */
     public SpotifyAPIImplementation(String accessToken, String userId) {
 
         SpotifyAPIImplementation.spotifyApi = new SpotifyApi.Builder()
@@ -35,6 +42,13 @@ public class SpotifyAPIImplementation {
                 .build();
     }
 
+    /**
+     * This method gathers playlist data from a user's Spotify Playlists section and
+     * allows users to choose the songs of a playlist that they would like to download.
+     *
+     * @return songNames : A String array that contains the list
+     * of all the songs in the playlist that the user selected
+     */
     public static String[] PlaylistInformation() {
         String[] songNames = null;
         try {
@@ -70,7 +84,7 @@ public class SpotifyAPIImplementation {
 //          .market(CountryCode.SE)
 //          .additionalTypes("track,episode")
                     .build();
-            //System.out.println(playlistSimplifiedPaging.getItems()[6].getId());
+
             try {
                 final Paging<PlaylistTrack> playlistTrackPaging = getPlaylistsItemsRequest.execute();
 
