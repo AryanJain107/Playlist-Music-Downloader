@@ -6,15 +6,15 @@ __Important Note: The program uses functions from Java 16. Verify that your java
 
 Once the application starts, the program will ask for a Spotify Access Token and a Spotify User ID of the user's account that has the playlist that the user wants to download.
 
-##Spotify Access Token
+## Spotify Access Token
 In order to get the access token, go to https://developer.spotify.com/console/get-current-user-playlists/?limit=&offset= and click on the "get token" button. Then, click on the "request token" button to generate the access token. Copy and paste this token in the console when the program asks for it. After sometime, this access token may expire. When this happens, simply repeat the previous steps to create another access token.
 
-##Spotify User ID
+## Spotify User ID
 In order to get the Spotify user ID, login to the Spotify account and go to the account overview settings. Copy the username of the account and paste this string in the terminal when the program asks for it.
 
 After that, follow the instructions in the application to achieve the desired the results. 
 
-##Quota Exceeded Error
+## Quota Exceeded Error
 After running the program, if the "quota exceeded" error is occurring. It is most likely because the program has already reached its limit for the number of times it can request resources from the Youtube API. There are 2 solutions for this error. 
 1. The requests are refreshed every 24 hours. So, just waiting until the requests are reset will get rid of this error.
 2. A new ApiKey can be generated and updated in the YoutubeAPIImplementation class to resolve this issue. Below are the steps to do so.
@@ -35,17 +35,17 @@ After running the program, if the "quota exceeded" error is occurring. It is mos
 
 ## YoutubeAPIImplementation
 
-#APIs
+# APIs
 The APIs used implemented in this project are the Spotify API and the Youtube Data API. 
 
-##Spotify-Web-API-Java
+## Spotify-Web-API-Java
 https://github.com/spotify-web-api-java/spotify-web-api-java
 
-##Youtube Data API v3
+## Youtube Data API v3
 https://github.com/googleapis/google-api-java-client-services/tree/main/clients/google-api-services-youtube/v3
 
-#Youtube-dl
+# Youtube-dl
 This application enables the ability to download a youtube video using Command Prompt. In order to successfully run this program, this application needs to be installed and placed in the same folder as this project. To download this application, go to https://ytdl-org.github.io/youtube-dl/download.html and follow the provided instructions.
 
-#FFMEG
+# FFMEG
 This is an open-sourced project that helps convert audio files into different formats. Download this and place it in the same folder as this project on your local machine. Go to this link for the installation process: https://ffmpeg.org/.
