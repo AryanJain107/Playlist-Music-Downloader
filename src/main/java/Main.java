@@ -1,11 +1,20 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.security.GeneralSecurityException;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * This is the class with the Main method. This class calls the methods of the other two API
+ * Implementation classes and then starts download process by calling youtube-dl at Runtime.
+ *
+ * @author Aryan Jain
+ * @version 1.0.0
+ */
 public class Main {
-    public static void main(String[] args) throws IOException, GeneralSecurityException {
+    public static void main(String[] args) throws IOException, GeneralSecurityException, InterruptedException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Access Token?");
         String accessToken = scanner.nextLine();
@@ -30,11 +39,12 @@ public class Main {
         YoutubeAPIImplementation p2 = new YoutubeAPIImplementation();
         String[] urls = p2.youtubeSongLink(songNames);
         System.out.println(Arrays.toString(urls));
-        Process p;
-        //String playlistName = "NewPlaylist";
 
-        String[] urlList1 = Arrays.copyOfRange(urls, 0, (urls.length + 1)/2);
-        String[] urlList2 = Arrays.copyOfRange(urls, (urls.length + 1)/2, urls.length);
+        //Lines 42-58 work for Windows Operating System.
+        // For macOS, please comment lines 42-60 out and uncomment lines 62-76.
+        Process p;
+        String[] urlList1 = Arrays.copyOfRange(urls, 0, (urls.length + 1) / 2);
+        String[] urlList2 = Arrays.copyOfRange(urls, (urls.length + 1) / 2, urls.length);
 
         String songURLList1 = "";
         String songURLList2 = "";
@@ -44,12 +54,26 @@ public class Main {
         for (int i = 0; i < urlList2.length; i++) {
             songURLList2 += urlList2[i] + " ";
         }
-//        System.out.println(Arrays.toString(urlList1));
-//        System.out.println(Arrays.toString(urlList2));
-        //p = Runtime.getRuntime().exec("cmd.exe /c start mkdir " + playlistName, null, new File("C:/VideoDownloadTest"));
+
+
         p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList1, null, new File("C:/projects/Playlist-Music-Downloader"));
         p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList2, null, new File("C:/projects/Playlist-Music-Downloader"));
 
-        //p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 youtube.com/watch?v=UTHLKHL_whs https://www.youtube.com/watch?v=qdpXxGPqW-Y", null, new File("C:/VideoDownloadTest"));
+//        String songURLList = "";
+//        for (int i = 0; i < urls.length; i++) {
+//            songURLList += urls[i] + "";
+//        }
+//
+//        Process proc = Runtime.getRuntime().exec(songURLList, null, new File("/Users/maas/IdeaProjects"));
+//
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+//
+//        String line = "";
+//        while ((line = reader.readLine()) != null) {
+//            System.out.println(line);
+//        }
+//
+//        proc.waitFor();
+
     }
 }
