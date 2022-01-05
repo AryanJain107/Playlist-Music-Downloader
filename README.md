@@ -30,9 +30,16 @@ After running the program, if the "quota exceeded" error is occurring. It is mos
 # Classes Summary
 
 ## Main
-This class, which has the `main` method, calls the two API implementation files and enables users to download songs from a playlist through a terminal-based interface. Once the user selects and confirms the playlist that they would like to download, the `main` method opens two Command Prompts where the Youtube-dl application is called to download the videos and so that the users have a live report of the program, regarding the download process and the mp3 conversion. 
+This class, which has the `main` method, calls the two API implementation files and enables users to download songs from a playlist through a terminal-based interface. 
+
+There are different implementation methods for the download process for different operating systems. The code for both Windows and macOS operating system is given. By default, macOS implementation is ran. If you have a Windows OS, then go to the Main.java file and follow the instructions on line 45.
+### For Windows OS
+Once the user selects and confirms the playlist that they would like to download, the `main` method opens two Command Prompts where the Youtube-dl application is called to download the videos and so that the users have a live report of the program, regarding the download process and the mp3 conversion. 
 
 _Note: Two Command Prompts are opened because the program splits the array of song url links in half to improve download efficiency._
+
+### For macOS
+macOS implementation is the default implementation of this program. To change to Windows OS implementation, refer to the information provided above.
 
 ## SpotifyAPIImplementation
 This class implements the Spotify API in order to get information about the user's Spotify playlists that the user wants to download. In the `playlistInformation()` method, a list of all the user's playlists is created from which the user can select any of the playlists. Upon doing so, the user can view the songs that are in the selected playlist. This method returns an array of all the songs of the playlist.
@@ -50,6 +57,6 @@ https://github.com/googleapis/google-api-java-client-services/tree/main/clients/
 
 # Youtube-dl
 This application enables the ability to download a YouTube video using Command Prompt. In order to successfully run this program, this application needs to be installed and placed in the same folder as this project. To download this application, go to https://ytdl-org.github.io/youtube-dl/download.html and follow the provided instructions.
-
+Homebrew commands in terminal can also be used to download youtube-dl.
 # FFMPEG
-This is an open-sourced project that helps convert audio files into different formats. Download this and place it in the same folder as this project on your local machine. Go to this link for the installation process: https://ffmpeg.org/.
+This is an open-sourced project that helps convert audio files into different formats. Download this and place it in the same folder as this project on your local machine. Go to this link for the installation process: https://ffmpeg.org/. Homebrew commands in terminal can also be used to download FFMPEG.
