@@ -40,41 +40,46 @@ public class Main {
         String[] urls = p2.youtubeSongLink(songNames);
         System.out.println(Arrays.toString(urls));
 
-        //Lines 46-61 work for Windows Operating System.
-        //Lines 63-77 work for macOS.
-        // For macOS, please comment lines 46-61 out and uncomment lines 63-77.
-        Process p;
-        String[] urlList1 = Arrays.copyOfRange(urls, 0, (urls.length + 1) / 2);
-        String[] urlList2 = Arrays.copyOfRange(urls, (urls.length + 1) / 2, urls.length);
+        //Lines 47-62 work for Windows Operating System.
+        //Lines 64-82 work for macOS.
+        // For macOS, please comment lines 47-62 out and uncomment lines 64-82.
 
-        String songURLList1 = "";
-        String songURLList2 = "";
-        for (int i = 0; i < urlList1.length; i++) {
-            songURLList1 += urlList1[i] + " ";
-        }
-        for (int i = 0; i < urlList2.length; i++) {
-            songURLList2 += urlList2[i] + " ";
-        }
-
-
-        p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList1, null, new File("C:/projects/Playlist-Music-Downloader"));
-        p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList2, null, new File("C:/projects/Playlist-Music-Downloader"));
-
-//        String songURLList = "";
-//        for (int i = 0; i < urls.length; i++) {
-//            songURLList += urls[i] + "";
+//        Process p;
+//        String[] urlList1 = Arrays.copyOfRange(urls, 0, (urls.length + 1) / 2);
+//        String[] urlList2 = Arrays.copyOfRange(urls, (urls.length + 1) / 2, urls.length);
+//
+//        String songURLList1 = "";
+//        String songURLList2 = "";
+//        for (int i = 0; i < urlList1.length; i++) {
+//            songURLList1 += urlList1[i] + " ";
+//        }
+//        for (int i = 0; i < urlList2.length; i++) {
+//            songURLList2 += urlList2[i] + " ";
 //        }
 //
-//        Process proc = Runtime.getRuntime().exec(songURLList, null, new File("/Users/maas/IdeaProjects"));
-//
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-//
-//        String line = "";
-//        while ((line = reader.readLine()) != null) {
-//            System.out.println(line);
-//        }
-//
-//        proc.waitFor();
+//        //Update the file paths according to your machine in the next two lines
+//        p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList1, null, new File("C:/projects/Playlist-Music-Downloader"));
+//        p = Runtime.getRuntime().exec("cmd.exe /c start youtube-dl.exe -x --audio-format mp3 " + songURLList2, null, new File("C:/projects/Playlist-Music-Downloader"));
 
+        String songURLList = "";
+        for (int i = 0; i < urls.length; i++) {
+            songURLList = urls[i];
+            System.out.println(songURLList);
+            Process proc = Runtime.getRuntime().exec("youtube-dl -x --audio-format mp3 " + songURLList, null, new File("/Users/maas/IdeaProjects"));
+
+
+            //Update the file paths in the next line according to your machine
+            //Process proc = Runtime.getRuntime().exec("youtube-dl -x --audio-format mp3 " + songURLList, null, new File("/Users/maas/IdeaProjects"));
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+
+            String line = "";
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            proc.waitFor();
+        }
     }
 }
+
