@@ -40,8 +40,9 @@ public class Main {
         String[] urls = p2.youtubeSongLink(songNames);
         System.out.println(Arrays.toString(urls));
 
-        //Lines 42-58 work for Windows Operating System.
-        // For macOS, please comment lines 42-60 out and uncomment lines 62-76.
+        //Lines 46-61 work for Windows Operating System.
+        //Lines 63-77 work for macOS.
+        // For macOS, please comment lines 46-61 out and uncomment lines 63-77.
         Process p;
         String[] urlList1 = Arrays.copyOfRange(urls, 0, (urls.length + 1) / 2);
         String[] urlList2 = Arrays.copyOfRange(urls, (urls.length + 1) / 2, urls.length);
